@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const linkStyle = "text-xl border rounded-lg p-2 hover:underline";
+
 export default function Header() {
   return (
     <header className="p-8 flex width-[100%] bg-gray-300">
@@ -8,9 +10,9 @@ export default function Header() {
       </div>
 
       <div className="flex my-auto justify-end w-[50%]">
-        <nav>
-          <Link className="text-xl border rounded-lg p-2 hover:underline" href="/">Home</Link>
-
+        <nav className="flex gap-4">
+          <Link className={linkStyle} href="/">Home</Link>
+          <Link className={linkStyle} href="/blog">Blog</Link>
         </nav>
       </div>
     </header>
