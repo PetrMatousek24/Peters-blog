@@ -10,8 +10,11 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Blog created by Petr",
+  title: {
+    default: "Peter's Blog",
+    template: "%s | Peter's Blog",
+  },
+  description: "Blog created by Peter to test out his Next.js skills.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {

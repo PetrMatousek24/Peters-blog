@@ -1,4 +1,10 @@
 import "@/public/profile.jpg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description: "Learn more about Peter, the creator of this blog.",
+};
 
 export default function AboutPage() {
   return (

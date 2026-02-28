@@ -2,6 +2,12 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import { Fragment } from "react/jsx-runtime";
 import style from "@/styles/tailwind-styles";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "A collection of blog posts created by Peter.",
+};
 
 export default function BlogPage() {
   const posts = getAllPosts();
