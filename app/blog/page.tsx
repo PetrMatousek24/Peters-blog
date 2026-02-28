@@ -5,6 +5,7 @@ import style from "@/styles/tailwind-styles";
 
 export default function BlogPage() {
   const posts = getAllPosts();
+  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); 
 
   return (
     <>
