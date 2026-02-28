@@ -1,5 +1,6 @@
 import { getPostBySlug, getPostContent, getPostSlugs } from "@/lib/posts"
 import style from "@/styles/tailwind-styles";
+import { notFound } from "next/navigation";
 
 
 export async function generateStaticParams() {
@@ -13,6 +14,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      description: "The requested blog post does not exist.",
+    };
+  }
 
   return {
     title: post.title,
@@ -24,6 +31,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  if (!post) {
+    notFound();
+  }
   const content = await getPostContent(post.content);
 
   return (
