@@ -1,16 +1,11 @@
 @import "tailwindcss";
 
-div {
-  justify-content: 
-}
-
-
 @layer base {
   h1 {
-    @apply font-bold;
+    @apply font-bold text-3xl;
   }
 
   h2 {
-    @apply font-semibold;
+    @apply font-semibold text-xl;
   }
 }

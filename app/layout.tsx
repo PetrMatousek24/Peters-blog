@@ -23,7 +23,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
-        {children}
+        <main className="py-4 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+          {children}
+        </main>
       </body>
     </html>
   );
