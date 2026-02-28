@@ -29,6 +29,7 @@ export default function Header() {
         <nav className="flex gap-4">
           <Link className={linkStyle(pathname, "/")} href="/">Home</Link>
           <Link className={linkStyle(pathname, "/blog")} href="/blog">Blog</Link>
+          <Link className={linkStyle(pathname, "/about")} href="/about">About</Link>
         </nav>
       </div>
     </header>
